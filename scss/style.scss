@@ -1,0 +1,378 @@
+//Import Section
+@import "variables";
+@import "normalize";
+
+
+
+
+
+
+// Anvender den samme font til alle tekster, undtagen hvis de bliver lavet om.
+* {
+    font-family: 'Open Sans', sans-serif;;
+}
+
+//Bruger en variabel fra "_variables.scss" og anvender en farve på kroppen 
+// + Fjerner de automatiske padding & margin på body.
+body {
+    background-color: $body-color;
+    margin: 0;
+    padding: 0;
+}
+
+// Header Indstillinger.
+//Pga. Sass, i stedet for at lave en ny linje kode, kan vi bare skabe en i header elementet.
+header {
+    width: 100%;
+    height: 50px;
+    .header_logo-div {
+        float: left;
+        width: 250px;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100% 0;
+            margin: 10px 0px 0px 10px;
+        }
+    }
+}
+
+// Nav - Computer
+.computer-nav {
+    float: right;
+    margin-top: 15px;
+    a {
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        &:hover {
+            color: $main-blue;
+            transition: 0,5s;
+        }
+    }
+}
+
+// Nav - Mobil
+.burger_menu-nav {
+    display: none;
+    section {
+        text-align: center;
+        padding: 25px;
+        border-bottom: solid 1px rgb(49, 49, 49);
+        a {
+            font-family: $title-text;
+            font-size: 25px;
+            text-decoration: none;
+            color: $main-black;
+            &:hover {
+                color: $main-blue;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+
+
+// Burger Menu Icon
+.burger_menu-wrap {
+    float: right;
+    margin: 5px 10px 0px 0px;  
+    cursor: pointer;
+    div {
+        width: 35px;
+        height: 3px;
+        background-color: $main-blue;
+        margin: 6px 0;
+    }
+}
+
+
+// Main Billede 
+.main-billede-wrap {
+    margin-bottom: 25px;
+    height: 275px;
+    -webkit-box-shadow: 0px 8px 20px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 20px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 20px -11px rgba(0,0,0,0.75);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+// Article Introduktion
+.article-introduktion {
+    text-align: center;
+    h1 {
+        color: $heading-color;
+        font-family: $title-text;
+    }
+    p {
+        padding: 15px;
+    }
+}
+
+// Lokation & Kontakt - LK
+.LK-wrap {
+    width: 90%;
+    height: 300px;
+    margin: 20px auto 20px auto;
+    background-color: $main-grey;
+    text-align: center;
+    h3 {
+        color: $heading-color;
+        padding: 15px;  
+    }
+}
+
+
+
+// Accordion - W3s
+.accordion {
+    background-color: $body-color;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    margin: 0 auto;
+    transition: 0.4s;
+    text-align: center;
+    &:hover {
+        background-color: $main-blue;
+    }
+    h3 {
+        color: $heading-color;
+    }
+}
+
+// Tilpasser de bestemte paneler, når en person klikker burgermenuen.
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+    span {
+        color: $main-blue;
+    }
+  }
+
+
+  // Iframe (Google Maps)
+  iframe {
+    display: block;
+    width: 90%;
+    margin: 20px auto 20px auto;
+    height: 400px;
+  }
+
+  //Lokation/Adresse
+  .article-lokation {
+      width: 90%;
+      height: 150px;
+      margin: 10px auto 10px auto;
+      background-color: $main-grey;
+      text-align: center;
+      h3 {
+          padding-top: 25px;
+          color: $heading-color;
+      }
+  }
+
+
+  // Sociale Medier (Facebook, Instagram & Youtube.)
+  // Valgte at bruge en flexbox til denne section, eftersom der var kun 3 elementer (3 img'er.).
+  .section-social {
+      width: 100%;
+      height: 100px;
+      background-color: $main-blue;
+      margin-top: 50px;
+      display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+      img {
+          width: 50px;
+          height: 50px;
+          -webkit-order: 0;
+          -ms-flex-order: 0;
+           order: 0;
+           -webkit-flex: 0 1 auto;
+           -ms-flex: 0 1 auto;
+           flex: 0 1 auto;
+           -webkit-align-self: auto;
+           -ms-flex-item-align: auto;
+           align-self: auto;
+           margin: 30px;
+          
+      }
+  }
+
+// Footer (Afsluttende element på hjemmesiden.)
+  footer {
+      width: 100%;
+      border-top: solid 2px $main-grey;
+      margin-top: 20px;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      ul {
+          display: block;
+          width: 100px;
+          height: 300px;
+          li {
+            padding: 10px;
+          }
+      }
+
+      h4 {
+          color: $heading-color;
+      }
+      
+      a {
+          text-decoration: none;
+          color: black;
+          &:hover {
+              color: $main-blue;
+              transition: 0.5s;
+          }
+      }
+
+      section {
+          display: block;
+          clear: both;
+          border: solid 2px $main-grey;
+          width: 100%;
+          margin: 0px auto 0px auto;
+          text-align: center;
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Media Section.
+  // Hurtig forklarelse. Når vi går højere op i størrelse (altså "Mobil" --> "Tablet" --> "Computer"),
+  // så skal der tilpasses/ændres nogle classes o.l. for at få hjemmesiden til at virke optimalt.
+  // Nogle .classes får transition på sig i @media min-max. Hvorfor?, for at opnå den bedste browser-resolution animation.
+
+  // @media (700px) bruger kun til billedet, eftersom det bliver alt for grimt/stretched over 700px.
+  @media screen and (min-width: 700px) {
+    .main-billede-wrap {
+        height: 500px;
+        transition: 0.5s;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .main-billede-wrap {
+        transition: 0.5s;
+    }
+  }
+
+  @media screen and (max-width: 1049px) {
+      .computer-nav {
+    display: none;
+    a {
+        display: none;
+    }
+}
+  }
+
+
+  // Når brugeren rammer denne størrelse, er de officielt på computer-versionen af hjemmesiden.
+  // Det er også grunden til at der er så mange .classes i forhold til @media (700px).
+  @media screen and (min-width: 1050px) {
+    .main-billede-wrap {
+        width: 80%;
+        margin: auto;
+        height: 800px;
+        transition: 0.5s;
+    }
+
+    .LK-wrap {
+        width: 50%;
+        transition: 0.5s;   
+    }
+
+    .article-lokation {
+        width: 50%;
+        transition: 0.5s;
+    }
+
+
+    // Fordi at browserens størrelse er over 1050px, 
+    // så skal burger-menuen slukkes og den almindelige computer-nav skal blive tændt igen (display: none --> display: block;
+    .burger_menu-nav {
+        display: none;
+        section {
+            display: none;
+        }
+    }
+
+    .burger_menu-wrap {
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .main-billede-wrap {
+        transition: 0.5s;
+    }
+
+    LK-wrap {
+        transition: 0.5s;   
+    }
+
+    .article-lokation {
+        transition: 0.5s;
+    }
+  }
+
+
